@@ -2938,16 +2938,10 @@ section {
     linear-gradient(90deg, rgba(7, 93, 204, 0.055) 1px, transparent 1px),
     linear-gradient(rgba(7, 93, 204, 0.045) 1px, transparent 1px),
     linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  background-size: 96px 96px, 96px 96px, auto;
-}
-
-.resume::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 10px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  pointer-events: none;
+  background-size:
+    96px 96px,
+    96px 96px,
+    auto;
 }
 
 .resume-heading {
@@ -3175,6 +3169,18 @@ section {
   height: 7px;
   border-radius: 999px;
   background: var(--accent);
+}
+
+.resume-experience .resume-item:last-child {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding-bottom: 28px;
+}
+
+@media (min-width: 992px) {
+  .resume-experience .resume-item:last-child {
+    margin-bottom: 1px;
+  }
 }
 
 .resume-focus-card {
@@ -3803,6 +3809,7 @@ section {
   }
 
   .about-portrait-card {
+    align-self: center;
     max-width: 315px;
     padding: 10px;
     border-radius: 26px;
@@ -4134,6 +4141,8 @@ section {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  min-height: 100vh;
+  padding-bottom: 90px;
   background:
     radial-gradient(
       circle at 12% 8%,
@@ -4145,7 +4154,7 @@ section {
       rgba(147, 197, 253, 0.22),
       transparent 24rem
     ),
-    linear-gradient(180deg, #073b8e 0%, #075dcc 34%, #f6fbff 34%, #ffffff 100%);
+    linear-gradient(180deg, #0c68b1 0%, #075ccc 100%);
 }
 
 .portfolio::before {
@@ -4157,7 +4166,7 @@ section {
     linear-gradient(90deg, rgba(255, 255, 255, 0.11) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 82px 82px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 48%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 .portfolio .container {
@@ -4339,7 +4348,11 @@ section {
   gap: 8px;
   flex: 1;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 255, 0.94)),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 246, 255, 0.94)
+    ),
     radial-gradient(
       circle at 100% 0%,
       rgba(37, 99, 235, 0.12),
