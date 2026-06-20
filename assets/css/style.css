@@ -2751,10 +2751,7 @@ section {
 .resume {
   position: relative;
   isolation: isolate;
-  background:
-    linear-gradient(180deg, rgba(248, 250, 252, 0.92), rgba(255, 255, 255, 0.94)),
-    radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.08), transparent 28rem),
-    radial-gradient(circle at 86% 72%, rgba(20, 184, 166, 0.08), transparent 24rem);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
 .resume-heading {
@@ -2768,10 +2765,9 @@ section {
 .resume-snapshot,
 .resume-focus-card {
   border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.1);
-  backdrop-filter: blur(18px);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
 }
 
 .resume-snapshot {
@@ -2812,17 +2808,25 @@ section {
   gap: 12px;
 }
 
-.resume-contact-grid div {
+.resume-contact-grid div,
+.resume-contact-grid a {
   display: flex;
   align-items: center;
   min-width: 0;
   gap: 12px;
   padding: 12px 14px;
   border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 14px;
+  border-radius: 8px;
   background: rgba(248, 250, 252, 0.74);
   color: var(--ink);
   font-weight: 700;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.resume-contact-grid a:hover {
+  border-color: rgba(37, 99, 235, 0.28);
+  background: rgba(239, 246, 255, 0.92);
+  color: var(--accent);
 }
 
 .resume-contact-grid i {
@@ -2832,7 +2836,7 @@ section {
   flex: 0 0 34px;
   width: 34px;
   height: 34px;
-  border-radius: 12px;
+  border-radius: 8px;
   color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
@@ -2883,14 +2887,13 @@ section {
   margin-bottom: 18px;
   overflow: hidden;
   border-left: 0;
-  border-radius: 18px;
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .resume .resume-item:hover {
-  transform: translateY(-5px);
   border-color: rgba(37, 99, 235, 0.28);
-  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.14);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
 }
 
 .resume .resume-item::before {
@@ -2927,6 +2930,7 @@ section {
   color: #0f766e;
   background: rgba(20, 184, 166, 0.12);
   font-size: 13px;
+  border-radius: 8px;
   white-space: nowrap;
 }
 
@@ -2983,7 +2987,7 @@ section {
 .resume-tags span {
   padding: 9px 12px;
   border: 1px solid rgba(37, 99, 235, 0.12);
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(37, 99, 235, 0.06);
   color: #334155;
   font-size: 13px;
@@ -3004,7 +3008,7 @@ section {
   .resume-snapshot,
   .resume .resume-item,
   .resume-focus-card {
-    border-radius: 14px;
+    border-radius: 8px;
   }
 
   .resume-snapshot {
