@@ -3737,7 +3737,7 @@ section {
 
   .hero-tech-orbit {
     width: min(78vw, 260px);
-    margin-top: -8px;
+    margin-top: 20px;
   }
 
   .hero-tech-core {
