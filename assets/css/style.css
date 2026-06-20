@@ -4888,3 +4888,144 @@ section {
     font-size: 22px;
   }
 }
+
+/* =====================================================
+   Productive Modern Cards for About Left Rail
+   Mobile + AI card enhancement
+===================================================== */
+
+.about-rail-grid {
+  align-items: stretch;
+}
+
+.about-rail-grid .about-skill-card {
+  position: relative;
+  min-height: 230px;
+  padding: 22px;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  background:
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(37, 99, 235, 0.12),
+      transparent 6rem
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(248, 251, 255, 0.82)
+    );
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    border-color 0.32s ease;
+}
+
+.about-rail-grid .about-skill-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(37, 99, 235, 0.24);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.14);
+}
+
+.about-skill-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.about-skill-top i {
+  margin: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  color: #075dcc;
+  background: rgba(37, 99, 235, 0.1);
+  font-size: 24px;
+}
+
+.about-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #075dcc !important;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  font-size: 10px !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-rail-grid .about-skill-card strong {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+  color: #0b1220;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.about-rail-grid .about-skill-card p {
+  position: relative;
+  z-index: 1;
+  min-height: 44px;
+  margin: 0;
+  color: #5f6f89;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.about-skill-meter {
+  position: relative;
+  z-index: 1;
+  height: 7px;
+  margin: 18px 0 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.about-skill-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #075dcc, #0b8df0);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.about-rail-grid .about-skill-card small {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Mobile: make cards compact and cleaner */
+@media (max-width: 576px) {
+  .about-rail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-rail-grid .about-skill-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .about-skill-top {
+    margin-bottom: 16px;
+  }
+
+  .about-rail-grid .about-skill-card p {
+    min-height: auto;
+  }
+}
