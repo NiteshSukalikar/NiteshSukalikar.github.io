@@ -254,8 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg3.jpg") top right no-repeat;
-  background-size: cover;
+  background: #08111f;
   position: relative;
 }
 
@@ -1459,9 +1458,45 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-bg-image {
   z-index: 0;
-  background: url("../img/hero-bg3.jpg") center center / cover no-repeat;
+  background:
+    radial-gradient(circle at 74% 34%, rgba(6, 182, 212, 0.26) 0 12%, transparent 30%),
+    radial-gradient(circle at 86% 76%, rgba(37, 99, 235, 0.26) 0 10%, transparent 28%),
+    radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.16) 0 8%, transparent 28%),
+    linear-gradient(115deg, rgba(248, 251, 255, 0.9) 0%, rgba(226, 232, 240, 0.78) 38%, rgba(15, 23, 42, 0.78) 78%, rgba(8, 17, 31, 0.98) 100%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 72px),
+    #08111f;
   transform: scale(1.04);
   animation: hero-image-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-bg-image::before,
+.hero-bg-image::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-bg-image::before {
+  inset: 0;
+  background:
+    linear-gradient(115deg, transparent 0 48%, rgba(6, 182, 212, 0.32) 48.2%, transparent 48.8%),
+    linear-gradient(140deg, transparent 0 58%, rgba(37, 99, 235, 0.26) 58.2%, transparent 58.8%),
+    linear-gradient(72deg, transparent 0 66%, rgba(255, 255, 255, 0.18) 66.2%, transparent 66.8%);
+  opacity: 0.72;
+}
+
+.hero-bg-image::after {
+  top: 16%;
+  right: 7%;
+  width: min(42vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.92) 0 2px, transparent 3px) 0 0 / 58px 58px,
+    radial-gradient(circle, rgba(6, 182, 212, 0.52) 0 2px, transparent 3px) 29px 29px / 58px 58px;
+  opacity: 0.34;
+  mask-image: radial-gradient(circle, black 0%, transparent 70%);
 }
 
 .hero-classic-vignette {
@@ -1906,11 +1941,17 @@ section {
   align-items: stretch !important;
 }
 
+.about-showcase > [class*="col-"] {
+  display: flex;
+}
+
 .about-portrait-wrap {
   position: relative;
   display: grid;
+  grid-template-rows: auto 1fr;
   align-content: start;
   gap: 22px;
+  width: 100%;
   height: 100%;
   isolation: isolate;
 }
@@ -2048,6 +2089,8 @@ section {
 
 .about-profile-rail {
   display: grid;
+  grid-template-rows: minmax(112px, auto) 1fr minmax(78px, auto);
+  align-content: stretch;
   gap: 14px;
   width: 100%;
   max-width: 430px;
@@ -2110,6 +2153,9 @@ section {
 }
 
 .about-rail-grid > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   min-width: 0;
   padding: 18px;
   border-radius: 20px;
@@ -2187,6 +2233,8 @@ section {
 .about-panel {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .about-panel::after {
