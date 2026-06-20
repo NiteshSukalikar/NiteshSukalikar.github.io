@@ -215,7 +215,7 @@
     var ambientOne = document.querySelector('.hero-ambient-one');
     var ambientTwo = document.querySelector('.hero-ambient-two');
     var heroBg = document.querySelector('.hero-bg-image');
-    var heroMark = document.querySelector('.hero-classic-mark');
+    var heroMark = document.querySelector('.hero-tech-orbit');
 
     if (hero && ambientOne && ambientTwo) {
       hero.addEventListener('mousemove', function(event) {
