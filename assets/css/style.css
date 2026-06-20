@@ -1711,9 +1711,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: hero-orbit-tilt 12s ease-in-out infinite;
 }
 
-.hero-tech-node,
-.hero-tech-pill,
-.hero-code-shard {
+.hero-tech-logo {
   position: absolute;
   z-index: 5;
   display: inline-flex;
@@ -1724,103 +1722,80 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--ink);
   box-shadow: 0 18px 40px rgba(8, 17, 31, 0.18);
   backdrop-filter: blur(16px);
-}
-
-.hero-tech-node {
-  width: clamp(48px, 5.2vw, 68px);
-  height: clamp(48px, 5.2vw, 68px);
+  width: clamp(42px, 4.6vw, 60px);
+  height: clamp(42px, 4.6vw, 60px);
   border-radius: 22px;
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(25px, 3vw, 36px);
   animation: hero-node-hover 4.8s ease-in-out infinite;
 }
 
-.hero-tech-node-react {
+.hero-tech-angular {
   top: 1%;
-  left: 46%;
+  left: 43%;
+  color: #dc2626;
+}
+
+.hero-tech-react {
+  top: 9%;
+  right: 19%;
   color: #0ea5e9;
+  animation-delay: -0.6s;
 }
 
-.hero-tech-node-js {
+.hero-tech-vue {
+  right: -1%;
   top: 35%;
-  right: -2%;
-  color: #ca8a04;
-  animation-delay: -1s;
-}
-
-.hero-tech-node-node {
-  right: 17%;
-  bottom: 2%;
   color: #16a34a;
-  animation-delay: -2s;
+  animation-delay: -1.2s;
 }
 
-.hero-tech-node-python {
-  left: 0;
-  bottom: 22%;
+.hero-tech-js {
+  right: 7%;
+  bottom: 16%;
+  color: #ca8a04;
+  animation-delay: -1.8s;
+}
+
+.hero-tech-node {
+  right: 29%;
+  bottom: -2%;
+  color: #16a34a;
+  animation-delay: -2.4s;
+}
+
+.hero-tech-python {
+  left: 27%;
+  bottom: -2%;
   color: #2563eb;
   animation-delay: -3s;
 }
 
-.hero-tech-pill {
-  min-width: clamp(52px, 5vw, 70px);
-  min-height: 34px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(11px, 1vw, 13px);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  animation: hero-node-hover 5.6s ease-in-out infinite;
+.hero-tech-html {
+  left: 4%;
+  bottom: 17%;
+  color: #ea580c;
+  animation-delay: -3.6s;
 }
 
-.hero-tech-pill-api {
-  top: 20%;
-  left: 5%;
-  animation-delay: -1.6s;
+.hero-tech-css {
+  left: -1%;
+  top: 35%;
+  color: #2563eb;
+  animation-delay: -4.2s;
 }
 
-.hero-tech-pill-ai {
-  top: 12%;
-  right: 12%;
-  animation-delay: -2.6s;
+.hero-tech-bootstrap {
+  left: 17%;
+  top: 10%;
+  color: #7c3aed;
+  animation-delay: -4.8s;
 }
 
-.hero-tech-pill-db {
-  left: 31%;
-  bottom: -3%;
-  animation-delay: -3.4s;
-}
-
-.hero-code-shard {
-  min-width: 48px;
-  min-height: 34px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  color: rgba(15, 23, 42, 0.74);
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  animation: hero-code-drift 6.4s ease-in-out infinite;
-}
-
-.hero-code-shard-one {
-  top: 58%;
-  right: 6%;
-}
-
-.hero-code-shard-two {
-  left: 18%;
-  top: 48%;
-  animation-delay: -2.1s;
-}
-
-.hero-code-shard-three {
-  right: 28%;
-  bottom: 18%;
-  animation-delay: -4s;
+.hero-tech-git {
+  left: 41%;
+  top: 24%;
+  color: #f97316;
+  animation-delay: -5.4s;
 }
 
 .hero-scroll-indicator {
@@ -2929,29 +2904,24 @@ section {
     border-radius: 22px;
   }
 
-  .hero-tech-node {
+  .hero-tech-logo {
+    width: 40px;
+    height: 40px;
     border-radius: 18px;
+    font-size: 24px;
   }
 
-  .hero-tech-pill {
-    min-width: 46px;
-    min-height: 30px;
-    padding: 7px 10px;
+  .hero-tech-css,
+  .hero-tech-vue {
+    inset-inline: auto;
   }
 
-  .hero-code-shard {
-    min-width: 42px;
-    min-height: 30px;
-    padding: 7px 9px;
-    font-size: 11px;
-  }
-
-  .hero-tech-node-js {
-    right: 0;
-  }
-
-  .hero-tech-node-python {
+  .hero-tech-css {
     left: 2%;
+  }
+
+  .hero-tech-vue {
+    right: 2%;
   }
 
   .hero-stats {
