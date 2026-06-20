@@ -4662,3 +4662,229 @@ section {
     padding: 16px;
   }
 }
+
+/* =====================================================
+   Mobile Navigation Drawer Fix
+   Add at bottom of style.css
+===================================================== */
+
+@media (max-width: 991px) {
+  #header {
+    width: 300px !important;
+    max-width: 82vw !important;
+    left: -300px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    padding: 86px 18px 24px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(148, 163, 184, 0.24);
+    box-shadow: 24px 0 70px rgba(15, 23, 42, 0.18);
+    overflow-y: auto;
+  }
+
+  .mobile-nav-active #header {
+    left: 0 !important;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu ul {
+    width: 100%;
+  }
+
+  .nav-menu > ul > li {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-menu a {
+    width: 100% !important;
+    max-width: none !important;
+    height: 52px !important;
+    padding: 0 16px !important;
+    justify-content: flex-start !important;
+    gap: 12px;
+    border-radius: 16px !important;
+    background: rgba(248, 251, 255, 0.92) !important;
+    color: #334155 !important;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    transform: none !important;
+  }
+
+  .nav-menu a i {
+    width: 22px;
+    min-width: 22px;
+    font-size: 20px;
+    color: inherit;
+  }
+
+  .nav-menu a span {
+    display: inline-block !important;
+    color: inherit !important;
+    padding: 0 !important;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu .active > a,
+  .nav-menu li:hover > a {
+    width: 100% !important;
+    max-width: none !important;
+    color: #ffffff !important;
+    background: linear-gradient(
+      135deg,
+      var(--accent),
+      var(--accent-2)
+    ) !important;
+    transform: none !important;
+  }
+
+  .nav-menu a:hover span,
+  .nav-menu .active > a span,
+  .nav-menu li:hover > a span {
+    display: inline-block !important;
+    color: #ffffff !important;
+  }
+
+  .mobile-nav-toggle {
+    top: 24px !important;
+    right: 24px !important;
+    z-index: 9999 !important;
+  }
+}
+
+/* =====================================================
+   Elegant Floating WhatsApp + Back To Top Buttons
+   Add at bottom of style.css
+===================================================== */
+
+.whatsapp-icon,
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  z-index: 9999;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-radius 0.28s ease;
+}
+
+.whatsapp-icon {
+  bottom: 104px;
+  background: linear-gradient(135deg, #25d366 0%, #12b76a 100%);
+  box-shadow:
+    0 18px 42px rgba(18, 183, 106, 0.34),
+    0 0 0 8px rgba(37, 211, 102, 0.08);
+  animation: whatsapp-float 3.2s ease-in-out infinite;
+}
+
+.back-to-top {
+  bottom: 34px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow:
+    0 18px 42px rgba(37, 99, 235, 0.3),
+    0 0 0 8px rgba(37, 99, 235, 0.08);
+}
+
+.whatsapp-icon i,
+.back-to-top i {
+  position: static;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.whatsapp-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 24px;
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  opacity: 0;
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+.whatsapp-icon:hover,
+.back-to-top:hover {
+  color: #ffffff;
+  transform: translateY(-5px) scale(1.04);
+  border-radius: 50%;
+}
+
+.whatsapp-icon:hover {
+  box-shadow:
+    0 24px 55px rgba(18, 183, 106, 0.42),
+    0 0 0 10px rgba(37, 211, 102, 0.1);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  box-shadow:
+    0 24px 55px rgba(37, 99, 235, 0.38),
+    0 0 0 10px rgba(37, 99, 235, 0.1);
+}
+
+@keyframes whatsapp-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.55;
+  }
+
+  70% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.22);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .whatsapp-icon,
+  .back-to-top {
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .whatsapp-icon {
+    bottom: 92px;
+  }
+
+  .back-to-top {
+    bottom: 28px;
+  }
+
+  .whatsapp-icon i,
+  .back-to-top i {
+    font-size: 22px;
+  }
+}
