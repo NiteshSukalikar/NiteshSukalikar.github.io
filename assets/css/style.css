@@ -1231,9 +1231,12 @@ section {
   --line: rgba(15, 23, 42, 0.1);
   --surface: rgba(255, 255, 255, 0.78);
   --surface-strong: #ffffff;
-  --accent: #2563eb;
-  --accent-2: #06b6d4;
-  --accent-3: #7c3aed;
+  --accent: #075dcc;
+  --accent-2: #0b8df0;
+  --accent-3: #1d4ed8;
+  --brand-blue-dark: #073b8e;
+  --brand-blue-soft: #eaf4ff;
+  --brand-blue-mist: #f6fbff;
   --shadow-soft: 0 24px 70px rgba(15, 23, 42, 0.12);
   --shadow-card: 0 18px 45px rgba(15, 23, 42, 0.1);
 }
@@ -2930,7 +2933,21 @@ section {
 .resume {
   position: relative;
   isolation: isolate;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(7, 93, 204, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(7, 93, 204, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  background-size: 96px 96px, 96px 96px, auto;
+}
+
+.resume::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 10px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  pointer-events: none;
 }
 
 .resume-heading {
@@ -2939,14 +2956,20 @@ section {
 
 .resume-shell {
   position: relative;
+  z-index: 1;
+  padding: 28px;
+  border: 1px solid rgba(7, 93, 204, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 26px 78px rgba(7, 59, 142, 0.1);
 }
 
 .resume-snapshot,
 .resume-focus-card {
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  border: 1px solid rgba(7, 93, 204, 0.16);
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 38px rgba(7, 59, 142, 0.08);
 }
 
 .resume-snapshot {
@@ -3111,8 +3134,8 @@ section {
   flex: 0 0 auto;
   margin: 0;
   padding: 7px 13px;
-  color: #0f766e;
-  background: rgba(20, 184, 166, 0.12);
+  color: var(--brand-blue-dark);
+  background: rgba(7, 93, 204, 0.1);
   font-size: 13px;
   border-radius: 8px;
   white-space: nowrap;
@@ -3151,7 +3174,7 @@ section {
   width: 7px;
   height: 7px;
   border-radius: 999px;
-  background: var(--accent-2);
+  background: var(--accent);
 }
 
 .resume-focus-card {
@@ -4091,11 +4114,11 @@ section {
   background:
     linear-gradient(
       145deg,
-      rgba(255, 255, 255, 0.94),
-      rgba(248, 250, 252, 0.82)
+      rgba(255, 255, 255, 0.98),
+      rgba(246, 251, 255, 0.92)
     ),
-    linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(20, 184, 166, 0.05));
-  border: 1px solid rgba(148, 163, 184, 0.18);
+    linear-gradient(135deg, rgba(7, 93, 204, 0.05), rgba(11, 141, 240, 0.05));
+  border: 1px solid rgba(7, 93, 204, 0.14);
 }
 
 .resume .resume-item.compact {
@@ -4110,18 +4133,19 @@ section {
 .portfolio {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   background:
     radial-gradient(
-      circle at 18% 12%,
-      rgba(37, 99, 235, 0.16),
-      transparent 26rem
+      circle at 12% 8%,
+      rgba(255, 255, 255, 0.24),
+      transparent 22rem
     ),
     radial-gradient(
-      circle at 82% 18%,
-      rgba(6, 182, 212, 0.14),
+      circle at 88% 8%,
+      rgba(147, 197, 253, 0.22),
       transparent 24rem
     ),
-    linear-gradient(180deg, #ffffff 0%, #f4f9ff 48%, #eaf4ff 100%);
+    linear-gradient(180deg, #073b8e 0%, #075dcc 34%, #f6fbff 34%, #ffffff 100%);
 }
 
 .portfolio::before {
@@ -4130,10 +4154,10 @@ section {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(37, 99, 235, 0.055) 1px, transparent 1px),
-    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px);
-  background-size: 74px 74px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 76%);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 82px 82px;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 48%);
 }
 
 .portfolio .container {
@@ -4143,13 +4167,21 @@ section {
 
 .portfolio-title h2,
 .portfolio-title p {
-  color: var(--ink);
+  color: #ffffff;
 }
 
 .portfolio-title .section-kicker {
-  color: var(--accent);
-  background: rgba(37, 99, 235, 0.08);
-  border-color: rgba(37, 99, 235, 0.16);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.portfolio-title h2::before {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.portfolio-title h2::after {
+  background: #ffffff;
 }
 
 .portfolio-editorial-strip {
@@ -4161,17 +4193,17 @@ section {
 
 .portfolio-editorial-strip div {
   padding: 22px;
-  border: 1px solid rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-  color: #334155;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(18px);
 }
 
 .portfolio-editorial-strip span {
   display: block;
   margin-bottom: 8px;
-  color: var(--accent);
+  color: #bfdbfe;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -4180,7 +4212,7 @@ section {
 
 .portfolio-editorial-strip strong {
   display: block;
-  color: var(--ink);
+  color: #ffffff;
   font-size: 17px;
   line-height: 1.55;
 }
@@ -4192,10 +4224,10 @@ section {
   gap: 18px;
   margin: 0 0 34px;
   padding: 18px;
-  border: 1px solid rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(7, 93, 204, 0.12);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 24px 70px rgba(37, 99, 235, 0.11);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(7, 59, 142, 0.16);
   backdrop-filter: blur(18px);
 }
 
@@ -4231,12 +4263,12 @@ section {
 
 .portfolio #portfolio-flters {
   margin-bottom: 28px;
-  border-color: rgba(37, 99, 235, 0.13);
-  background: rgba(255, 255, 255, 0.76);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .portfolio #portfolio-flters li {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .portfolio .portfolio-item {
@@ -4439,7 +4471,7 @@ section {
     linear-gradient(180deg, #ffffff 0%, #f8fbff 100%),
     radial-gradient(
       circle at 85% 20%,
-      rgba(20, 184, 166, 0.12),
+      rgba(7, 93, 204, 0.11),
       transparent 24rem
     );
 }
@@ -4544,27 +4576,31 @@ section {
   .portfolio {
     background:
       radial-gradient(
-        circle at 18% 12%,
-        rgba(37, 99, 235, 0.22),
-        transparent 22rem
+        circle at 16% 8%,
+        rgba(255, 255, 255, 0.22),
+        transparent 18rem
       ),
       radial-gradient(
-        circle at 82% 18%,
-        rgba(6, 182, 212, 0.16),
-        transparent 20rem
+        circle at 84% 16%,
+        rgba(147, 197, 253, 0.22),
+        transparent 18rem
       ),
       linear-gradient(
         180deg,
-        #07111f 0%,
-        #0c1728 52%,
-        #f8fbff 52%,
-        #eef6ff 100%
+        #073b8e 0%,
+        #075dcc 43%,
+        #f6fbff 43%,
+        #ffffff 100%
       );
   }
 
   .portfolio-editorial-strip,
   .portfolio-strengths {
     grid-template-columns: 1fr;
+  }
+
+  .resume-shell {
+    padding: 20px;
   }
 
   .portfolio-strengths {
