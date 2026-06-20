@@ -2844,11 +2844,19 @@ section {
 }
 
 .resume-layout {
+  align-items: stretch;
   row-gap: 28px;
 }
 
+.resume-layout > [class*="col-"] {
+  display: flex;
+}
+
 .resume-column {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .resume .resume-title {
@@ -2959,6 +2967,10 @@ section {
 }
 
 .resume-focus-card {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
   padding: 24px;
 }
 
