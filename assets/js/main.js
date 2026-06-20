@@ -188,4 +188,53 @@
     items: 1
   });
 
+  // Subtle reveal animation for cards and content blocks.
+  if ('IntersectionObserver' in window) {
+    var revealItems = document.querySelectorAll('.count-box, .portfolio-wrap, .icon-box, .resume-item, .testimonial-item, .contact .info, .skills-content, .about .content, .about-portrait-card, .about-highlight, .about-metrics div, .about-info-grid div');
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16
+    });
+
+    revealItems.forEach(function(item, index) {
+      item.classList.add('reveal-ready');
+      item.style.transitionDelay = Math.min(index % 6, 5) * 70 + 'ms';
+      revealObserver.observe(item);
+    });
+  }
+
+  // Gentle hero parallax, disabled on touch-heavy devices by the media query.
+  if (window.matchMedia('(pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+    var hero = document.getElementById('hero');
+    var ambientOne = document.querySelector('.hero-ambient-one');
+    var ambientTwo = document.querySelector('.hero-ambient-two');
+    var heroBg = document.querySelector('.hero-bg-image');
+    var heroMark = document.querySelector('.hero-classic-mark');
+
+    if (hero && ambientOne && ambientTwo) {
+      hero.addEventListener('mousemove', function(event) {
+        var bounds = hero.getBoundingClientRect();
+        var x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        var y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+        ambientOne.style.transform = 'translate3d(' + (x * 26) + 'px, ' + (y * 26) + 'px, 0)';
+        ambientTwo.style.transform = 'translate3d(' + (x * -18) + 'px, ' + (y * -18) + 'px, 0)';
+
+        if (heroBg) {
+          heroBg.style.transform = 'scale(1.07) translate3d(' + (x * -14) + 'px, ' + (y * -10) + 'px, 0)';
+        }
+
+        if (heroMark) {
+          heroMark.style.transform = 'translate3d(' + (x * 18) + 'px, ' + (y * 14) + 'px, 0)';
+        }
+      });
+    }
+  }
+
 })(jQuery);
